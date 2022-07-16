@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+   name: javawebapprc
+spec:
+  replicas: 1
+  selector:
+     app: javawebapp
+  template:
+     metadata:
+       name: javawebapppod
+       labels:
+         app: javawebapp
+     spec:
+       containers:
+          - name: javawebappcontainer
+            image: saleem786/java-web-app-img
+            ports:
+              - containerPort: 8080
