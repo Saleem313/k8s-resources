@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+   name: javawebapprs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       app: javawebapp
+  template:
+     metadata:
+       name: javawebapppod
+       labels:
+         app:  javawebapp
+     spec:
+        containers:
+          - name: javawebappcontainer
+            image: saleem786/java-web-app-img
+            ports:
+              - containerPort: 8080
