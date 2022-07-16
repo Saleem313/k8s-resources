@@ -1,2 +1,2 @@
 # k8s-resources
-Kubernetes resources
+In Kubernetes resources manifest file.
