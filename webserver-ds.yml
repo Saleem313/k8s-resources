@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+   name: webserverds
+spec:
+  selector:
+    matchLabels:
+       app: webserver
+  template:
+     metadata:
+       name: webserverpod
+       labels:
+          app: webserver
+     spec:
+       containers:
+         - name: webservercontainer
+           image: httpd
+           ports:
+             - containerPort: 80
